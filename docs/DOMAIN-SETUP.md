@@ -8,17 +8,17 @@ Bei einem deutschen Registrar mit DNS-Verwaltung. Kein Hosting-Paket dazubuchen 
 Fehler aus der Vergangenheit: ungenutztes Hosting-Paket bei frankfurt-energie.online lief weiter → **nur Domain buchen, Kündigungsfrist notieren.**
 
 ## 2 · GitHub vorbereiten (zuerst!)
-GitHub → Profil → Settings → Pages → **Add a domain** → `nordstern-frankfurt.de` → GitHub zeigt einen TXT-Eintrag (`_github-pages-challenge-intelligentresponder-max`). Das verhindert, dass jemand anders die Domain auf sein Repo lenkt (Domain-Übernahme).
+GitHub → Profil → Settings → Pages → **Add a domain** → `nordstern-frankfurt.de` → GitHub zeigt einen TXT-Eintrag (`_github-pages-challenge-nordstern-ffm`). Das verhindert, dass jemand anders die Domain auf sein Repo lenkt (Domain-Übernahme).
 
 ## 3 · DNS-Einträge beim Registrar
 | Typ | Name | Wert |
 | --- | --- | --- |
-| TXT | `_github-pages-challenge-intelligentresponder-max` | Code aus Schritt 2 |
+| TXT | `_github-pages-challenge-nordstern-ffm` | Code aus Schritt 2 |
 | A | `@` | 185.199.108.153 |
 | A | `@` | 185.199.109.153 |
 | A | `@` | 185.199.110.153 |
 | A | `@` | 185.199.111.153 |
-| CNAME | `www` | `intelligentresponder-max.github.io` |
+| CNAME | `www` | `nordstern-ffm.github.io` |
 Die IPs vor dem Eintragen mit der GitHub-Doku „Managing a custom domain for your GitHub Pages site“ abgleichen.
 
 ## 4 · Repo umschalten

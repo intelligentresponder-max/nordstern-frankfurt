@@ -1,5 +1,7 @@
 # Nordstern Frankfurt
 
+GitHub-Konto: **nordstern-ffm** (eigenes Konto, getrennt von intelligentresponder-max). Repo: nordstern-ffm/nordstern-frankfurt.
+
 Sozial. Informiert. Vernetzt. – Dachseite für den Frankfurter Norden.
 Briefing: [CLAUDE.md](CLAUDE.md) · Entscheidungen: [docs/ENTSCHEIDUNGEN.md](docs/ENTSCHEIDUNGEN.md) · Domain: [docs/DOMAIN-SETUP.md](docs/DOMAIN-SETUP.md) · Fehler: [FEHLER-LOG.md](FEHLER-LOG.md) · Repo-Audit: [docs/REPO-AUDIT.md](docs/REPO-AUDIT.md)
 
