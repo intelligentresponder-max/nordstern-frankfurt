@@ -17,6 +17,7 @@ Lokal ansehen: `python3 -m http.server 8000` → http://localhost:8000
 | `data/dienste.json` | Vermittlungsangebote (+ interne Prüfpunkte) |
 | `data/petitionen.json` | Anliegen, Ziel 220 Unterstützer |
 | `data/standpunkte.json` | FW-Positionen, nur `freigegeben: true` wird gezeigt |
+| `data/zahlung.json` | Agentur-Pakete mit Stripe-/Gumroad-Zahlungslink (erst sichtbar mit Preis + Link) |
 | `data/links.json` | Nur im Browser bestätigte externe Links |
 | `tools/build.py`, `tools/check.py` | Generator und Prüfung |
 | `css/`, `fonts/` | Gestaltung, lokale Schriften (SIL OFL) |

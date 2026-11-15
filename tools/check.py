@@ -27,8 +27,10 @@ for p in pages:
     # 3. Externe Links nur, wenn in links.json bestätigt oder ausdrücklich erlaubt
     ok = {l["url"] for l in links.values() if l.get("bestaetigt")} | {site["verein"]["website"]}
     for m in re.findall(r'href="(https?://[^"]+)"', t):
-        if m not in ok and "openpetition" not in m:
+        zahlung = m.startswith("https://buy.stripe.com/") or re.match(r"https://[a-z0-9-]+\.gumroad\.com/", m)
+        if m not in ok and "openpetition" not in m and not zahlung:
             warn.append(f"{p}: ungeprüfter externer Link {m}")
+    # 3b. Zahlungslinks: nur gehostete Seiten (Stripe Payment Link / Gumroad), nie eigene Checkout-Skripte
     # 4. Keine Lorem/Platzhalter
     # Fehler 2026-11-15: re.I + "TODO" traf die CSS-Klasse class="todo" → nur Großschreibung prüfen
     if re.search(r"lorem ipsum|\[NAME\]|\[ADRESSE\]|\bTODO\b", t):

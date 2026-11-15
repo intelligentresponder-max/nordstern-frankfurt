@@ -18,10 +18,11 @@ def load(name):
 
 
 SITE = load("site.json")
-DIENSTE = load("dienste.json")["dienste"]
+DIENSTE = [d for d in load("dienste.json")["dienste"] if d.get("aktiv")]
 PET = load("petitionen.json")
 STAND = load("standpunkte.json")
 LINKS = load("links.json")["links"]
+ZAHLUNG = load("zahlung.json")
 LIVE = SITE["launch"] and SITE["domain_bestaetigt"]
 B = SITE["betreiber"]
 
@@ -122,6 +123,11 @@ page("index.html", "Start",
 <div class="buttons"><a class="btn btn-primary" href="nachbarschaft.html">Hilfe &amp; Mitmachen</a><a class="btn" href="mitmachen.html">Mangel melden</a></div>
 </section>
 <section aria-labelledby="h-saeulen"><h2 id="h-saeulen">Vier Wege, ein Ziel</h2><div class="grid grid-2">{pillars}</div></section>
+<section aria-labelledby="h-familie"><h2 id="h-familie">Die Nordstern-Familie</h2><div class="grid">
+{card(link("bangla_hilfe"), "<p>Visum, FSJ und Bundesfreiwilligendienst – erklärt auf Bangla und Deutsch.</p>")}
+{card(link("wege_nach_frankfurt"), "<p>Geschichten von Menschen aus Eritrea, Thailand und Laos, die in Frankfurt angekommen sind.</p>")}
+{card(f'<a href="{E(SITE["verein"]["website"])}" rel="noopener">Nachbarschaftshilfe Preungesheim</a>', "<p>Die Initiative für praktische Alltagshilfe – eigenständig und parteipolitisch neutral.</p>")}
+</div></section>
 <section class="callout"><h2>So arbeiten wir</h2>
 <ul><li><strong>Ehrlich:</strong> Was noch in Planung ist, steht auch so da.</li>
 <li><strong>Getrennt:</strong> Ehrenamt, Politik und Geschäft laufen in eigenen Bereichen mit eigener Verantwortung.</li>
@@ -156,7 +162,7 @@ page("frankfurt.html", "Frankfurt-Info",
 </div>
 <h2>Was Bürgerinnen und Bürger brauchen</h2>
 <p>Unsere Themen, über die wir hier regelmäßig schreiben:</p>
-<ul class="topics"><li>Bezahlbares Wohnen und Hilfe bei Wohnungssuche</li><li>Behördengänge verständlich erklärt – auch auf Bengalisch, Tigrinya, Thai und Lao (siehe unsere Projekte BanglaHilfe und wege-nach-frankfurt)</li><li>Sichere Wege für Ältere, Kinder und Rollstuhl</li><li>Pflege zu Hause und Entlastung für Angehörige</li><li>Arbeit finden im Frankfurter Norden</li></ul>
+<ul class="topics"><li>Bezahlbares Wohnen und Hilfe bei Wohnungssuche</li><li>Behördengänge verständlich erklärt – auch auf Bengalisch, Tigrinya, Thai und Lao (siehe {link("bangla_hilfe")} und {link("wege_nach_frankfurt")})</li><li>Sichere Wege für Ältere, Kinder und Rollstuhl</li><li>Pflege zu Hause und Entlastung für Angehörige</li><li>Arbeit finden im Frankfurter Norden</li></ul>
 <p class="small">Wir schreiben parteiunabhängig. Positionen einzelner Parteien stehen ausschließlich unter <a href="standpunkte.html">Standpunkte</a> und sind dort als solche gekennzeichnet.</p>
 """)
 
@@ -217,6 +223,17 @@ page("standpunkte.html", "Standpunkte",
 """)
 
 # ------------------------------------------------------------- Agentur
+def pakete_html():
+    """Nur aktive Pakete mit Preis UND gehostetem Zahlungslink; sonst Anfrage per E-Mail."""
+    ps = [p for p in ZAHLUNG["pakete"] if p["aktiv"] and p["preis"] and p["zahl_link"]]
+    if not ps:
+        return ""
+    return '<h2>Pakete</h2><div class="grid">' + "".join(card(E(p["titel"]),
+        f'<p class="small">Für {E(p["fuer"])}</p><ul>' + "".join(f"<li>{E(x)}</li>" for x in p["leistung"])
+        + f'</ul><p><strong>{E(p["preis"])}</strong></p><a class="btn btn-primary" href="{E(p["zahl_link"])}" rel="noopener">Jetzt buchen</a>')
+        for p in ps) + '</div><p class="small">Die Zahlung läuft über eine gesicherte Zahlungsseite unseres Zahlungsdienstleisters. Wir sehen keine Kartendaten.</p>'
+
+
 page("agentur.html", "Für Vereine & Firmen",
      "Copy & Code Agency Frankfurt: Websites, Texte und digitale Werkzeuge für Vereine, Ortsbeiräte und kleine Betriebe.",
      f"""
@@ -227,6 +244,7 @@ page("agentur.html", "Für Vereine & Firmen",
 {card("Texte, die ankommen", "<p>Websites, Anträge, Flyer, Bewerbungen und politische Texte – klar, prüfbar, in einfacher Sprache auf Wunsch.</p>")}
 {card("Digitale Werkzeuge", "<p>Koordinations-Apps für Nachbarschaftshilfe, Hotel-Werkzeuge, mehrsprachige Info-Portale. Rechte bleiben klar geregelt.</p>")}
 </div>
+{pakete_html()}
 <h2>Referenzen aus eigener Arbeit</h2>
 <ul><li>Nachbarschaftshilfe Preungesheim – Website und Koordinations-Prototyp</li><li>BanglaHilfe – zweisprachige Behörden-Hilfe Deutsch/Bengalisch</li><li>wege-nach-frankfurt – Geschichten aus Eritrea, Thailand und Laos</li><li>Housekeeping-Werkzeug für ein Frankfurter Hotel</li></ul>
 {kontakt_zeile()}

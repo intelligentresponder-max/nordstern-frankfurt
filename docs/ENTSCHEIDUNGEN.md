@@ -37,3 +37,17 @@
 - Taxi: nur vermitteln, nicht befördern (Personenbeförderungsgesetz).
 - Massage: nur Fachpersonal, keine Heilversprechen, strikt getrennt vom Projekt STAFF.
 - Nähen: Status der Näherinnen klären (Scheinselbstständigkeit).
+- Strom & Gas (TeleSon): vorbereitet, `aktiv: false`. Vertragsform (Handelsvertreter?), Provision offen nennen, Markenname nur mit Freigabe.
+- Amway: vorbereitet, `aktiv: false`. Website-/Social-Media-Regeln von Amway für Geschäftspartner vorher lesen; keine Einkommens- oder Heilversprechen; Kennzeichnung „unabhängiger Geschäftspartner“.
+
+## E8 · Bezahlen (Gumroad oder Stripe)
+**Gewählt:** Gehostete Zahlungsseite per Link (Stripe Payment Link oder Gumroad) in `data/zahlung.json`. Kein eigener Checkout-Code, keine Kartendaten, kein Server.
+| Alternative | Nutzen | Sicherheit | Ergebnis |
+| --- | --- | --- | --- |
+| Eigenes Stripe-Backend (wie mindful7777/stripe-api auf Vercel) | Abos, Kundenportal | Secrets, Webhooks, Server – dort schon Fehler „STRIPE_SECRET_KEY is not set“ | erst wenn Abos nötig |
+| Gumroad | sofort startklar, übernimmt Steuern als Händler | höhere Gebühr, eher für digitale Produkte | gut für Vorlagen/E-Books |
+| **Stripe Payment Link** | Dienstleistungen mit Festpreis, eigenes Branding | gehostet von Stripe | **gewählt für Agentur-Pakete** |
+Wichtig: eigenes Stripe-Konto für die Agentur (nicht das von Gumroad verwaltete bangla-hilfe-Konto, nicht das mindful7777-Konto). Pakete erscheinen erst mit `aktiv`, Preis und Link. Preise legen André und Sam fest.
+
+## E9 · Verknüpfung mit BanglaHilfe und wege-nach-frankfurt
+**Gewählt:** Nordstern verlinkt beide auf Start („Nordstern-Familie“) und Frankfurt-Info; Links am 15.11.2026 erreichbar geprüft (HTTP 200). **Rückverlinkung** aus beiden Repos erst nach Domain-Start (sonst zeigen sie auf eine `noindex`-Vorschau). Repos bleiben eigenständig – kein Zusammenlegen, damit sie einzeln verkaufbar bleiben (Repo-Verkauf).

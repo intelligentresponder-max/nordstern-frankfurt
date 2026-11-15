@@ -1,0 +1,45 @@
+{
+  "_hinweis": "Bezahlen nur über gehostete Zahlungsseiten (Stripe Payment Link oder Gumroad) – kein Code, keine Kartendaten auf dieser Seite. Paket erscheint erst mit aktiv=true, Preis und Link. Eigenes Stripe-Konto für die Agentur anlegen (nicht das von Gumroad verwaltete bangla-hilfe-Konto, nicht mindful7777).",
+  "anbieter": "stripe_payment_link",
+  "pakete": [
+    {
+      "id": "stadtteil-seite",
+      "titel": "Stadtteil-Seite",
+      "fuer": "Vereine, Initiativen, Ortsbeirats-Fraktionen",
+      "leistung": [
+        "Info-Seite wie Nordstern, bis 6 Unterseiten",
+        "Impressum, Datenschutz, barrierearm",
+        "Übergabe mit Pflege-Anleitung"
+      ],
+      "preis": "",
+      "zahl_link": "",
+      "aktiv": false
+    },
+    {
+      "id": "text-paket",
+      "titel": "Text-Paket",
+      "fuer": "Betriebe und Vereine",
+      "leistung": [
+        "Website-Texte oder Antrag oder Flyer",
+        "2 Korrekturrunden",
+        "Einfache Sprache auf Wunsch"
+      ],
+      "preis": "",
+      "zahl_link": "",
+      "aktiv": false
+    },
+    {
+      "id": "bewerbung",
+      "titel": "Bewerbungsmappe",
+      "fuer": "Jobsuchende",
+      "leistung": [
+        "Anschreiben und Lebenslauf",
+        "Auf eine Stelle zugeschnitten",
+        "PDF zum Versenden"
+      ],
+      "preis": "",
+      "zahl_link": "",
+      "aktiv": false
+    }
+  ]
+}

@@ -25,4 +25,6 @@ Dachseite für den Frankfurter Norden: Nachbarschaftshilfe (Verlinkung zum Verei
 2. Blog `frankfurt/` (Python-Build erweitern: `data/beitraege/*.md` → HTML), erster Beitrag „Ortsbeirat 10 in 5 Minuten“.
 3. Erste echte Petition mit externer URL in `data/petitionen.json`.
 4. Vermittlung: `pruefen`-Punkte je Dienst abarbeiten, dann Kontakt freischalten.
-5. Agenturseite: Preise/Pakete von Sam + André eintragen.
+5. Agenturseite: Preise/Pakete von Sam + André in `data/zahlung.json`, Stripe Payment Links anlegen (eigenes Konto).
+6. Strom & Gas (TeleSon) und Amway: `pruefen`-Punkte klären, dann `aktiv: true`.
+7. Nach Domain-Start: Rückverlinkung „Teil der Nordstern-Familie“ in bangla-hilfe und wege-nach-frankfurt.
