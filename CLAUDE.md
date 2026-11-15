@@ -1,5 +1,9 @@
 # Nordstern Frankfurt – Briefing für Claude Code
 
+## Aktueller Auftrag
+**Phase 2 (visuelles Redesign): siehe `CLAUDE-CODE-AUFTRAG.md` und `docs/UX-KONZEPT.md`.**
+Umgebung des Nutzers: Windows + Git Bash (dort `python` statt `python3`), unterwegs Termux.
+
 ## Ziel
 Dachseite für den Frankfurter Norden: Nachbarschaftshilfe (Verlinkung zum Verein), neutrale Frankfurt-Infos, Mängelmelder (Link zur Stadt), Petitionen (Ziel 220 Unterstützer, extern gesammelt), gewerbliche Vermittlung, gekennzeichnete Standpunkte FREIE WÄHLER, Schaufenster der Copy & Code Agency (André + Sam).
 
@@ -12,6 +16,7 @@ Dachseite für den Frankfurter Norden: Nachbarschaftshilfe (Verlinkung zum Verei
 6. Jeder Fehler → `FEHLER-LOG.md`. Jede Richtungsentscheidung → `docs/ENTSCHEIDUNGEN.md` mit Alternativen.
 
 ## Muss-Regeln
+- Bilder/Grafiken nur mit vollständigem Eintrag in `data/bilder.json` (Lizenz am Original geprüft).
 - Kein JavaScript, kein CDN, keine Tracker, keine Formulare mit personenbezogenen Daten.
 - Externe Links nur aus `data/links.json` mit Datum `bestaetigt`.
 - Verein-Bereich parteipolitisch neutral; Partei-Inhalte nur unter `standpunkte.html`, nur `freigegeben: true`.
