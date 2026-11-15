@@ -1,0 +1,21 @@
+{
+  "_hinweis": "Einzige Quelle für Marke, Kontakt und Launch-Schalter. Leere Pflichtfelder blockieren den Launch (tools/check.py).",
+  "marke": "Nordstern Frankfurt",
+  "claim": "Sozial. Informiert. Vernetzt. – für den Frankfurter Norden und die ganze Stadt.",
+  "stand": "November 2026",
+  "domain": "nordstern-frankfurt.de",
+  "domain_bestaetigt": false,
+  "launch": false,
+  "betreiber": {
+    "name": "André Schwarz",
+    "firma": "Copy & Code Agency",
+    "anschrift": "",
+    "email": "",
+    "telefon": "",
+    "ust_id_oder_hinweis": ""
+  },
+  "verein": {
+    "name": "Nachbarschaftshilfe Frankfurter Norden e.V. (in Gründung)",
+    "website": "https://intelligentresponder-max.github.io/nh-preungesheim-web/"
+  }
+}

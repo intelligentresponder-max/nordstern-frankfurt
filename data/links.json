@@ -1,0 +1,9 @@
+{
+  "_regel": "Nur URLs, die im Browser geöffnet und bestätigt wurden (Lehre aus Frankfurt_FW/FEHLER-LOG.md). Neue Links mit Datum eintragen.",
+  "links": {
+    "maengelmelder": {"titel": "Mängelmelder der Stadt (ffm.de – Frankfurt fragt mich)", "url": "https://www.ffm.de/de/maengelmelder", "bestaetigt": "2026-10-20"},
+    "ideenplattform": {"titel": "Ideenplattform der Stadt (ffm.de)", "url": "https://www.ffm.de/de/ideenplattform", "bestaetigt": "2026-10-20"},
+    "ffm_start": {"titel": "ffm.de – Bürgerbeteiligung Frankfurt", "url": "https://www.ffm.de/de", "bestaetigt": "2026-10-20"},
+    "fw_programm": {"titel": "Wahlprogramm FREIE WÄHLER Frankfurt", "url": "https://freiewaehler-frankfurt.de/wahlprogramm/", "bestaetigt": ""}
+  }
+}

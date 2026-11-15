@@ -1,0 +1,70 @@
+/* Nordstern Frankfurt – Nachthimmel + Gold, mobil zuerst, Dark als Standard.
+   Schriften lokal (SIL OFL, aus nachbarschaftshilfe-preungesheim/app/fonts). */
+@font-face{font-family:"Fraunces";font-weight:500;src:url("../fonts/fraunces-latin-500-normal.woff2") format("woff2");font-display:swap}
+@font-face{font-family:"Fraunces";font-weight:700;src:url("../fonts/fraunces-latin-700-normal.woff2") format("woff2");font-display:swap}
+@font-face{font-family:"Atkinson Hyperlegible";font-weight:400;src:url("../fonts/atkinson-hyperlegible-latin-400-normal.woff2") format("woff2");font-display:swap}
+@font-face{font-family:"Atkinson Hyperlegible";font-weight:700;src:url("../fonts/atkinson-hyperlegible-latin-700-normal.woff2") format("woff2");font-display:swap}
+
+:root{
+  --bg:#0B1630; --bg2:#122247; --text:#EEF2FA; --muted:#B9C5DD; --card:#14264D; --line:#2E4778;
+  --gold:#E0B84A; --gold-soft:#F4D98A; --link:#F4D98A; --btn-bg:#E0B84A; --btn-text:#0B1630;
+  --callout:#1A2C55; --focus:#F4D98A;
+}
+@media (prefers-color-scheme:light){
+  :root{--bg:#F5F3EC; --bg2:#E9E4D4; --text:#0F1E3D; --muted:#3A4A6B; --card:#FFFFFF; --line:#CFC7AE;
+    --gold:#8A6A10; --gold-soft:#B8901E; --link:#1F4E91; --btn-bg:#132A4E; --btn-text:#FFFFFF; --callout:#FFF6DA; --focus:#1F4E91}
+}
+*{box-sizing:border-box}
+html{font-size:112.5%}
+body{margin:0;color:var(--text);line-height:1.65;
+  font-family:"Atkinson Hyperlegible",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  background:var(--bg) radial-gradient(1200px 500px at 85% -10%,rgba(224,184,74,.18),transparent 60%) no-repeat}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.2}
+h1{font-size:2rem;margin:1.4rem 0 .7rem} h1 span{color:var(--gold-soft);font-weight:500}
+h2{font-size:1.45rem;margin:2.2rem 0 .6rem} h3{font-size:1.15rem;margin:.9rem 0 .4rem}
+.wrap{max-width:62rem;margin:0 auto;padding:0 1rem}
+a{color:var(--link);text-underline-offset:.18em}
+:focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:3px}
+.skip{position:absolute;left:-999px;top:0;background:#fff;color:#000;padding:.6rem 1rem;z-index:10}.skip:focus{left:0}
+.draft{background:var(--gold);color:#0B1630;text-align:center;font-weight:700;padding:.35rem 1rem;font-size:.9rem}
+.site-header{border-bottom:1px solid var(--line);background:rgba(11,22,48,.6)}
+@media (prefers-color-scheme:light){.site-header{background:rgba(255,255,255,.6)}}
+.head{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.6rem;padding-top:.7rem;padding-bottom:.7rem}
+.brand{display:flex;align-items:center;gap:.6rem;color:var(--text);text-decoration:none;font-family:Fraunces,Georgia,serif;font-weight:700;font-size:1.2rem;line-height:1.15}
+.brand small{display:block;font-family:"Atkinson Hyperlegible",sans-serif;font-weight:400;font-size:.75rem;color:var(--muted)}
+.star{width:2.4rem;height:2.4rem;fill:var(--gold);filter:drop-shadow(0 0 8px rgba(224,184,74,.55))}
+.star-inner{fill:var(--gold-soft)}
+@media (prefers-reduced-motion:no-preference){.star{animation:glow 4s ease-in-out infinite}
+  @keyframes glow{50%{filter:drop-shadow(0 0 16px rgba(224,184,74,.85))}}}
+nav ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.3rem}
+nav a{display:flex;align-items:center;min-height:44px;padding:.4rem .75rem;border-radius:2rem;color:var(--text);text-decoration:none;font-size:.92rem}
+nav a:hover{background:var(--bg2)}
+nav a[aria-current="page"]{background:var(--gold);color:#0B1630;font-weight:700}
+main{padding-bottom:3rem}
+.hero{padding:2.5rem 0 1rem}
+.eyebrow{text-transform:uppercase;letter-spacing:.12em;font-size:.8rem;color:var(--gold-soft);margin:0}
+.lead{font-size:1.2rem;color:var(--muted);max-width:42rem}
+.small{font-size:.85rem;color:var(--muted)}
+.badge{display:inline-block;padding:.2rem .8rem;border:2px solid var(--gold);border-radius:2rem;font-weight:700}
+.buttons{display:flex;flex-wrap:wrap;gap:.7rem;margin:1.4rem 0}
+.btn{display:inline-flex;align-items:center;min-height:48px;padding:.7rem 1.3rem;border:2px solid var(--btn-bg);border-radius:2rem;color:var(--text);text-decoration:none;font-weight:700;margin:.3rem 0}
+.btn-primary{background:var(--btn-bg);color:var(--btn-text)}
+.btn:hover{filter:brightness(1.1)}
+.grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:1rem;padding:.3rem 1.2rem 1rem;position:relative}
+.card h3 a{text-decoration:none;color:var(--gold-soft)} .card h3 a::after{content:"";position:absolute;inset:0}
+.card:hover{border-color:var(--gold)}
+.card ul{padding-left:1.1rem}
+.callout{background:var(--callout);border-left:6px solid var(--gold);border-radius:.6rem;padding:.2rem 1.2rem 1rem;margin:2rem 0}
+.notice{border:2px dashed var(--gold);border-radius:.6rem;padding:.7rem 1rem}
+.todo{background:var(--gold);color:#0B1630;padding:0 .4rem;border-radius:.3rem}
+.meter{height:.7rem;background:var(--bg2);border-radius:1rem;overflow:hidden}.meter span{display:block;height:100%;background:var(--gold)}
+.topics li{margin:.4rem 0}
+.site-footer{border-top:1px solid var(--line);padding:1.5rem 0;background:var(--bg2);font-size:.95rem}
+.site-footer a{color:var(--link)}
+@media (min-width:44rem){h1{font-size:2.8rem}}
+@media print{.site-header nav,.draft,.skip{display:none}body{background:#fff;color:#000}}
+/* Fehler 2026-11-15: Hellmodus – dunkle Schrift auf #8A6A10 nur ca. 3,6:1 → Navy-Fläche mit weißer Schrift */
+@media (prefers-color-scheme:light){.draft,nav a[aria-current="page"]{background:#132A4E;color:#FFFFFF}}
+.grid-2{grid-template-columns:repeat(auto-fit,minmax(18rem,1fr))}
+@media (min-width:44rem){.grid-2{grid-template-columns:1fr 1fr}}

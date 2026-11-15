@@ -1,0 +1,16 @@
+{
+  "_hinweis": "Unterschriften werden NICHT auf dieser Seite gesammelt (politische Meinung = besondere Kategorie, Art. 9 DSGVO). Jede Petition verlinkt auf eine externe Plattform oder die städtische Ideenplattform. Nur Einträge mit 'veroeffentlicht': true erscheinen.",
+  "ziel_unterstuetzer": 220,
+  "ziel_begruendung": "220 = Puffer über der Schwelle von 200 Unterstützungen, die für Ideen auf ffm.de gelten soll (laut FEHLER-LOG der Bürgerplattform noch nicht verifiziert).",
+  "eintraege": [
+    {
+      "id": "beispiel-gehweg",
+      "titel": "Sichere Gehwege für Rollator und Kinderwagen in Preungesheim",
+      "stadtteil": "Preungesheim",
+      "anliegen": "Abgesenkte Bordsteine an den Wegen zu Ärzten, Apotheke und Haltestellen.",
+      "plattform_url": "",
+      "unterstuetzer": 0,
+      "veroeffentlicht": false
+    }
+  ]
+}
